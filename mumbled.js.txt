@@ -1,0 +1,18 @@
+function accum(s) {
+    //declare new string to build desired output with
+    var mumbled = '';
+    //run a loop that iterates over each character
+    for(var i = 0; i < s.length; ++i) {
+        //adds the first character of each portion of the string
+        mumbled += s[i].toUpperCase();
+        //loops i times placing the remaining chars of our output string
+        for(var j = 0; j < i; ++j) {
+            //adds those remaining chars to output
+            mumbled += s[i].toLowerCase();
+        }
+        //checks to see if we are on the last char of input
+        if(i < s.length - 1) /*seperates portions of string with dashes*/ {mumbled += '-';}
+    }
+    return mumbled;
+}
+// https://www.codewars.com/kata/mumbling/javascript
